@@ -1,2 +1,17 @@
-. 
-. 
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/Library-ui/refs/heads/main/Redzhubui"))()
+local Window = redzlib:MakeWindow({
+  Title = "Premium",
+  SubTitle = "by wx",
+  SaveFolder = "teST CHAT PREMIUM V5.lua"
+})
+--// GUI com TextBox premium customizado
+
+Tab1:AddTextBox({ Name = "Chat como premium", Description = "Use o chat como se fosse premium", PlaceholderText = "Oi eu sou premium!", Callback = function(Value) local Players = game:GetService("Players") local LocalPlayer = Players.LocalPlayer local chatService = game:GetService("TextChatService")
+
+if chatService.ChatVersion == Enum.ChatVersion.TextChatService then
+  local msg = ". \r[Premium] " .. LocalPlayer.Name .. ": " .. Value
+  chatService.TextChannels.RBXGeneral:SendAsync(msg)
+end
+
+end })
+
